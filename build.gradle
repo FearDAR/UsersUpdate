@@ -22,9 +22,6 @@ dependencies {
 
     runtimeOnly 'org.postgresql:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-    //SpringWEBStarter
-    //SpringBootDataStarterJPA
 }
 
 tasks.named('test') {
