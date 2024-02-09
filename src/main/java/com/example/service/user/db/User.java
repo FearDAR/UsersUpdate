@@ -4,6 +4,7 @@ import lombok.*;
 
 @Entity
 @Table(name = "users")
+@SequenceGenerator(name = "user_id_seq", sequenceName = "user_id_seq", allocationSize = 1)
 @Data
 @NoArgsConstructor
 public class User {
@@ -11,6 +12,7 @@ public class User {
      * Unique user ID.
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")
     private int id;
 
     /**
