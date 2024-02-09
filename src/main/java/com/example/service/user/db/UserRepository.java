@@ -1,4 +1,4 @@
-package com.example.usersupdate.antiti;
+package com.example.service.user.db;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
