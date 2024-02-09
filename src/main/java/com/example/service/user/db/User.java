@@ -1,5 +1,4 @@
 package com.example.service.user.db;
-
 import jakarta.persistence.*;
 import lombok.*;
 
