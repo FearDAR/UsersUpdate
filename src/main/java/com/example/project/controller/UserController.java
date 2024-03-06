@@ -11,11 +11,14 @@ public class UserController {
     public String returnHelloWorld(){
         return "hello world";
     }
-    @PostMapping("/create")
-    public void create(@RequestBody UserCreatingRequest userCreatingRequest){
-        System.out.println();
-    }
+    @PostMapping("/info")
+    public UserResponse create(@RequestBody UserCreatingRequest userCreatingRequest){
 
-    @PostMapping("/response")
-    public UserResponse response(@RequestBody UserResponse userResponse) { return userResponse; }
+        UserResponse userResponse = new UserResponse();
+        userResponse.setFirstName(userCreatingRequest.getFirstName());
+        userResponse.setMiddleName(userCreatingRequest.getMiddleName());
+        userResponse.setLastName(userCreatingRequest.getLastName());
+
+        return userResponse;
+    }
 }
