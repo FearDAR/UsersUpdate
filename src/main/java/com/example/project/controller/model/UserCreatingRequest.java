@@ -11,6 +11,6 @@ public class UserCreatingRequest{
     private String firstName;
     @JsonProperty("middleName")
     private String middleName;
-    @JsonProperty("lustName")
+    @JsonProperty("lastName")
     private String lastName;
 }
