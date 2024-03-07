@@ -11,7 +11,7 @@ public class UserController {
     public String returnHelloWorld(){
         return "hello world";
     }
-    @PostMapping("/info")
+    @PostMapping()
     public UserResponse create(@RequestBody UserCreatingRequest userCreatingRequest){
 
         UserResponse userResponse = new UserResponse();
