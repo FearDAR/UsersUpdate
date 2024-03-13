@@ -1,24 +1,21 @@
 package com.example.project.controller;
 
 import com.example.project.controller.model.UserCreatingRequest;
-import com.example.project.controller.model.UserResponse;
+import com.example.project.service.user.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
+    @Autowired
+    private UserService userService;
     @GetMapping
     public String returnHelloWorld(){
         return "hello world";
     }
     @PostMapping()
-    public UserResponse create(@RequestBody UserCreatingRequest userCreatingRequest){
-
-        UserResponse userResponse = new UserResponse();
-        userResponse.setFirstName(userCreatingRequest.getFirstName());
-        userResponse.setMiddleName(userCreatingRequest.getMiddleName());
-        userResponse.setLastName(userCreatingRequest.getLastName());
-
-        return userResponse;
+    public void create(@RequestBody UserCreatingRequest userCreatingRequest){
+        userService.create(userCreatingRequest);
     }
 }
