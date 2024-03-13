@@ -1,7 +1,4 @@
-CREATE SEQUENCE users_id_seq
-MINVALUE 1
-START WITH 1
-INCREMENT 1;
+CREATE SEQUENCE users_id_seq;
 
 CREATE TABLE users (
                      id INT DEFAULT NEXTVAL('users_id_seq') PRIMARY key,
