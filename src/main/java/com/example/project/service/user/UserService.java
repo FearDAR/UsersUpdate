@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 public class UserService {
     private final UserRepository userRepository;
     public void create(UserCreatingRequest userCreatingRequest){
+
         User user = new User();
+
         user.setFirstName(userCreatingRequest.getFirstName());
         user.setMiddleName(userCreatingRequest.getMiddleName());
         user.setLastName(userCreatingRequest.getLastName());
