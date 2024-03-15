@@ -4,16 +4,18 @@ import lombok.*;
 
 @Entity
 @Table(name = "users")
-@SequenceGenerator(name = "user_id_seq", sequenceName = "user_id_seq", allocationSize = 1)
+@SequenceGenerator(name = "users_id_seq", sequenceName = "users_id_seq", allocationSize = 1)
 @Data
 @NoArgsConstructor
 public class User {
+
     /**
      * Unique user ID.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")
-    private int id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_id_seq")
+    @SequenceGenerator(name = "users_gen", sequenceName = "users_id_seq")
+    private long id;
 
     /**
      * Username.
@@ -24,7 +26,7 @@ public class User {
     /**
      * User last name.
      */
-    @Column(name = "second_naeme")
+    @Column(name = "last_name")
     private String lastName;
 
     /**
