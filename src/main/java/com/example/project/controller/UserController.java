@@ -2,14 +2,14 @@ package com.example.project.controller;
 
 import com.example.project.controller.model.UserCreatingRequest;
 import com.example.project.service.user.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
+@RequiredArgsConstructor
 public class UserController {
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
     @GetMapping
     public String returnHelloWorld(){
         return "hello world";
